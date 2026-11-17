@@ -1,0 +1,49 @@
+{
+  "incidents": [
+    {
+      "id": "INC-1042",
+      "title": "Work order status not updating",
+      "application": "Production Planning Demo",
+      "site": "Herne Sample Plant",
+      "reported_at": "2026-11-16T08:20:00+01:00",
+      "status": "open",
+      "impact": "degraded",
+      "affected_areas": 2,
+      "safety_or_quality_impact": false,
+      "summary": "Newly released orders remain in the prior status in the planning view.",
+      "evidence": ["Two synthetic order IDs reproduce the display issue", "No write errors in the sample event log"],
+      "owner": "Application Support",
+      "next_step": "Compare the planning view refresh timestamp with the integration event timestamp."
+    },
+    {
+      "id": "INC-1043",
+      "title": "Label preview unavailable",
+      "application": "Shopfloor Label Demo",
+      "site": "Herne Sample Plant",
+      "reported_at": "2026-11-16T09:05:00+01:00",
+      "status": "open",
+      "impact": "stopped",
+      "affected_areas": 1,
+      "safety_or_quality_impact": true,
+      "summary": "Operators cannot review the sample label before a simulated print run.",
+      "evidence": ["Preview endpoint returns a timeout in the synthetic trace"],
+      "owner": "Unassigned",
+      "next_step": "Confirm the affected template and keep the sample print workflow paused pending review."
+    },
+    {
+      "id": "INC-1044",
+      "title": "Dashboard load time increased",
+      "application": "Shift Overview Demo",
+      "site": "Herne Sample Plant",
+      "reported_at": "2026-11-15T14:45:00+01:00",
+      "status": "monitoring",
+      "impact": "minor",
+      "affected_areas": 1,
+      "safety_or_quality_impact": false,
+      "summary": "The synthetic dashboard takes longer to load after a sample configuration change.",
+      "evidence": ["Median response time increased from 1.1s to 2.8s in sample observations"],
+      "owner": "Application Support",
+      "next_step": "Compare the sample configuration with the prior version and continue monitoring."
+    }
+  ]
+}
